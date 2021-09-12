@@ -1,7 +1,9 @@
 # Objective
 
-Frontend: Vue + Apollo Client
-Backend: Apollo server + mock RESTful API
+A simple POC to demonstrate an end-to-end graphql data flow.
+
+- Frontend: Vue + Apollo Client
+- Backend: Apollo server + mock RESTful API
 
 # Run Backend
 
