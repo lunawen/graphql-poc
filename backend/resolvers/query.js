@@ -1,8 +1,8 @@
 module.exports = {
-  posts: (parent, args, { dataSources }, info) => {
+  posts: (_, __, { dataSources }) => {
     return dataSources.postAPI.getPosts();
   },
-  postById: (parent, { id }, { dataSources }, info) => {
+  postById: (_, { id }, { dataSources }) => {
     return dataSources.postAPI.getPostById(id);
   },
 };
