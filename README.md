@@ -29,6 +29,8 @@ npm run serve
 
 # Mock RESTful API
 
+http://localhost:3000
+
 Ref: https://www.npmjs.com/package/json-server
 
 ```shell
