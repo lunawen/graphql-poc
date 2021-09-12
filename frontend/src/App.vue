@@ -1,19 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ul>
+      <li v-for="post in posts" :key="post.id">
+        {{ post.content }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import gql from "graphql-tag";
+
+const posts_gql = gql`
+  query getPosts {
+    posts {
+      id
+      content
+    }
+  }
+`;
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data: function() {
+    return {
+      // posts here is the data in Vue component (must be the same name as apollo)
+      // Having the same name is how the posts state can be synced to the posts query’s result.
+      posts: [],
+    };
+  },
+  apollo: {
+    // posts is the return data key
+    // posts_gql is the query we defined
+    posts: posts_gql,
+  },
+};
 </script>
 
 <style>
