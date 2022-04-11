@@ -12,8 +12,10 @@ http://localhost:4001
 ```shell
 cd backend
 npm i
+# install json-server if you haven't
+npm i -g json-server
 # make sure json-server is also running
-json-server --watch data/db.json
+json-server --watch data/db.json --port 3000
 npm run start
 ```
 
